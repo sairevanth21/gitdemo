@@ -1,6 +1,6 @@
 applications:
   - name: gitdemo
-    path: target/gitdemo-0.0.1-SNAPSHOT.war
+    path: gitdemo/target/gitdemo-0.0.1-SNAPSHOT.war
     memory: 1024M
     random-route: true
 
