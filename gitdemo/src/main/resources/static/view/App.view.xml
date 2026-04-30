@@ -1,0 +1,8 @@
+<mvc:View
+    controllerName="sairevanth.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <App id="idapp"></App>
+
+
+</mvc:View>

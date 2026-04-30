@@ -1,0 +1,141 @@
+<mvc:View
+    controllerName="sairevanth.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m">
+
+    <VBox class="sapUiSmallMargin" width="100%">
+
+        <!-- 🔹 FORM SECTION -->
+        <Panel headerText="Create Vendor" expandable="true" expanded="true">
+
+            <f:SimpleForm 
+                editable="true" 
+                layout="ResponsiveGridLayout"
+                labelSpanXL="3"
+                labelSpanL="3"
+                labelSpanM="4"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="4"
+                emptySpanL="4"
+                emptySpanM="0"
+                emptySpanS="0"
+                columnsXL="2"
+                columnsL="2"
+                columnsM="1"
+                columnsS="1">
+
+                <Label text="Company Name"/>
+                <Input value="{/postPayload/companyName}" placeholder="Enter Company Name"/>
+
+                <Label text="First Name"/>
+                <Input value="{/postPayload/firstName}" placeholder="Enter First Name"/>
+
+                <Label text="Last Name"/>
+                <Input value="{/postPayload/lastName}" placeholder="Enter Last Name"/>
+
+                <Label text="Email"/>
+                <Input value="{/postPayload/email}" placeholder="Enter Email"/>
+
+                <Label text="Website"/>
+                <Input value="{/postPayload/website}" placeholder="Enter Website"/>
+
+                <Label text="Status"/>
+                <Input value="{/postPayload/status}" placeholder="Enter Status"/>
+
+                <Label text="GST Number"/>
+                <Input value="{/postPayload/gstNo}" placeholder="Enter GST Number"/>
+
+                <!-- 🔹 Create Button -->
+                <Button 
+                    text="Create Vendor" 
+                    type="Emphasized"
+                    width="100%"
+                    press="onCreate"/>
+
+            </f:SimpleForm>
+
+            <!-- 🔹 SECOND PANEL -->
+            <Panel headerText="Company Data" expandable="true" expanded="true">
+                
+                <!-- 🔹 LOAD BUTTON -->
+                <Button 
+                    text="Load Data" 
+                    press="load"
+                    class="sapUiSmallMarginTop"
+                    width="100%"/>
+
+                <!-- 🔹 TABLE -->
+                <Table 
+                    id="idtable" 
+                    items="{/vendor}"
+                    growing="true"
+                    growingScrollToLoad="true">
+
+                    <columns>
+
+                        <Column>
+                            <Text text="Company Name"/>
+                        </Column>
+
+                        <Column minScreenWidth="Tablet" demandPopin="true">
+                            <Text text="First Name"/>
+                        </Column>
+
+                        <Column minScreenWidth="Tablet" demandPopin="true">
+                            <Text text="Last Name"/>
+                        </Column>
+
+                        <Column minScreenWidth="Desktop" demandPopin="true">
+                            <Text text="Email"/>
+                        </Column>
+
+                        <Column minScreenWidth="Desktop" demandPopin="true">
+                            <Text text="Website"/>
+                        </Column>
+
+                        <Column minScreenWidth="Tablet" demandPopin="true">
+                            <Text text="Status"/>
+                        </Column>
+                        
+                        <Column minScreenWidth="Desktop" demandPopin="true">
+                            <Text text="GST Number"/>
+                        </Column>
+                        
+                        <Column>
+                            <Text text="Actions"/>
+                        </Column>
+
+                    </columns>
+
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+
+                                <Text text="{companyName}"/>
+                                <Text text="{firstName}"/>
+                                <Text text="{lastName}"/>
+                                <Text text="{email}"/>
+                                <Text text="{website}"/>
+                                <Text text="{status}"/>
+                                <Text text="{gstNo}"/>
+
+                                <Button 
+                                    icon="sap-icon://delete"
+                                    type="Reject"
+                                    press="onDelete"/>
+
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+
+                </Table>
+
+            </Panel>
+
+        </Panel>
+
+    </VBox>
+
+</mvc:View>
