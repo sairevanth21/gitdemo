@@ -2,7 +2,9 @@ applications:
   - name: gitdemo
     path: target/gitdemo-0.0.1-SNAPSHOT.war
     memory: 1024M
-    random-route: true
+
+    routes:
+      - route: gitdemo.cfapps.us10-001.hana.ondemand.com
 
     env:
       JBP_CONFIG_OPEN_JDK_JRE: '{ "jre": { "version": "17.+" } }'
