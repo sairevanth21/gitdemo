@@ -57,7 +57,7 @@
             </f:SimpleForm>
 
             <!-- 🔹 SECOND PANEL -->
-            <Panel headerText="Company Data" expandable="true" expanded="true">
+            <Panel headerText="Company New Data" expandable="true" expanded="true">
                 
                 <!-- 🔹 LOAD BUTTON -->
                 <Button 
